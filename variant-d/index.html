@@ -303,23 +303,44 @@
   }
 
   @media (max-width: 900px) {
-    .nav-inner { flex-wrap: wrap; gap: 16px; padding: 14px 20px; }
-    .menu { order: 3; flex: 1 0 100%; gap: 20px; font-size: 13px; overflow-x: auto; }
-    .utility-inner { flex-direction: column; gap: 6px; padding: 10px 20px; }
+    .nav-inner { flex-wrap: wrap; gap: 12px; padding: 14px 20px; }
+    .mark { font-size: 17px; }
+    .mark .zh { font-size: 14px; margin-left: 6px; letter-spacing: .2em; }
+    .menu {
+      order: 3; flex: 1 0 100%; gap: 10px 16px; font-size: 12px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .menu a { white-space: nowrap; padding: 3px 0; }
+    .nav-right { gap: 10px; }
+    .btn-primary { padding: 8px 14px; font-size: 12px; }
+    .utility-inner { flex-direction: column; gap: 6px; padding: 10px 20px; font-size: 11px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 48px); letter-spacing: .08em; }
+    .hero-sub { font-size: 15px; margin-bottom: 40px; }
+    .hero-cta { font-size: 15px; }
     main { padding: 0 20px; }
     .fold-head { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 56px; }
-    .fold-head .h-en { text-align: left; }
+    .fold-head .h-en { text-align: left; font-size: 13px; }
     .product-grid { grid-template-columns: 1fr; gap: 40px; padding: 32px 0 56px; }
     .creds, .trust, .services, .contact { padding: 56px 20px; }
     .creds-inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
-    .cred { border-right: none; border-bottom: 1px solid #e4e0d5; }
+    .cred { border-right: none; border-bottom: 1px solid #e4e0d5; padding: 18px 12px; }
+    .cred-num { font-size: 42px; }
+    .cred-num .unit { font-size: 16px; }
+    .cred-num .plus { font-size: 28px; }
     .cred:nth-child(odd) { border-right: 1px solid #e4e0d5; }
     .cred:nth-last-child(-n+2) { border-bottom: none; }
     .trust-inner { grid-template-columns: 1fr; gap: 40px; }
     .services { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
     .svc { padding: 0; border-right: none; border-bottom: 1px solid #dcdcdc; padding-bottom: 32px; }
     .svc:last-child { border-bottom: none; }
-    .contact-inner { grid-template-columns: 1fr; gap: 28px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .contact h3 { font-size: 24px; }
+    footer .row { flex-direction: column; gap: 8px; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .menu { font-size: 11px; gap: 8px 12px; }
+    .mark { font-size: 15px; }
+    .hero h1 { font-size: 34px; }
   }
 </style>
 </head>
