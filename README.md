@@ -23,7 +23,7 @@
 
 5 個頁面完整可互跳：
 - [首頁](variant-d/index.html) — 大圖 hero + 本週到貨條 + 3 產品卡 + 溯源 + CTA
-- [A5 和牛](variant-d/wagyu.html) — 3 産地對比 + 24 部位 + 完整規格
+- [A5 和牛](variant-d/wagyu.html) — 3 產地對比 + 24 部位 + 完整規格
 - [北海道海膽](variant-d/uni.html) — 2 品種對比 + 12 月季節曆
 - [日式海味](variant-d/seafood.html) — ULT vs 活〆 + 8 品種清單
 - [關於海和](variant-d/about.html) — 品牌故事 + 時間線 + FAQ
