@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日式海味系列 · 海和 UMI WA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./shared.css">
+<style>
+  .hero-img {
+    width: 100%; height: 60vh; min-height: 420px; max-height: 640px;
+    background: #111 center/cover no-repeat;
+    background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.45)),
+      url("https://images.unsplash.com/photo-1534482421-64566f976cfa?w=2400&q=85&auto=format&fit=crop");
+  }
+  .modes {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px;
+  }
+  .mode {
+    padding: 32px; border: 1px solid var(--line);
+  }
+  .mode.ult { background: var(--cream); }
+  .mode .tag {
+    display: inline-block; font-family: var(--serif-en); font-style: italic; font-size: 12px;
+    letter-spacing: .3em; text-transform: uppercase; padding: 4px 10px;
+    border: 1px solid var(--navy); color: var(--navy); margin-bottom: 16px;
+  }
+  .mode h3 {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 24px; letter-spacing: .08em; margin: 0 0 10px;
+  }
+  .mode .temp { font-family: var(--serif-en); font-style: italic; color: var(--ink-50); font-size: 17px; margin-bottom: 18px; }
+  .mode p { font-size: 14px; line-height: 1.9; color: var(--ink-70); margin: 0 0 14px; }
+  .mode ul { margin: 12px 0 0; padding-left: 18px; font-size: 14px; color: var(--ink-70); line-height: 1.9; }
+  .species-table {
+    width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px;
+  }
+  .species-table th, .species-table td {
+    padding: 16px 12px; text-align: left; border-bottom: 1px solid var(--line);
+  }
+  .species-table th {
+    font-family: var(--serif-en); font-style: italic; font-size: 11px; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--ink-50); font-weight: 400;
+  }
+  .species-table td { font-family: var(--serif-zh); color: var(--ink); line-height: 1.6; }
+  .species-table .jp { font-size: 15px; }
+  .species-table .en { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--ink-50); }
+  .species-table .badge {
+    display: inline-block; font-family: var(--serif-en); font-style: italic; font-size: 11px;
+    letter-spacing: .15em; padding: 3px 8px; border: 1px solid var(--line); color: var(--ink-60);
+    margin-right: 4px;
+  }
+  .species-table .badge.ult { border-color: var(--navy); color: var(--navy); }
+  .species-table .badge.fresh { border-color: #6b7c4a; color: #6b7c4a; }
+  @media (max-width: 900px) {
+    .modes { grid-template-columns: 1fr; }
+    .species-table th, .species-table td { padding: 12px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark"><a href="index.html">UMI WA<span class="zh">海和</span></a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="wagyu.html">A5 Wagyu</a>
+      <a href="uni.html">Hokkaido Uni</a>
+      <a href="seafood.html" class="active">Seafood</a>
+      <a href="index.html#traceability">Sourcing</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><span class="on">中</span> / EN</div>
+      <a class="btn-primary" href="index.html#contact">申請報價</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-img"></div>
+
+<header class="page-head">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Seafood</div>
+  <h1>日式海味系列</h1>
+  <div class="en">Sashimi-Grade Seafood — Super Frozen &amp; Fresh Kill</div>
+</header>
+
+<section class="sec">
+  <div class="prose">
+    <p class="lead">本鮪・金目鯛・鮟鱇・真鯛・青甘・縞鯵——以 ULT -60°C 超低溫鎖鮮與當日活〆空運兩種模式供貨，讓主廚按菜單結構自由配比。</p>
+    <p>ULT 超低溫處理解決跨境冷鏈長時間運輸對高脂魚類氧化變色的問題，解凍後肉質與色澤近乎當日新鮮。對於產地即殺即凍的本鮪，這是唯一能穩定供應中腹、大腹的技術路徑。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Two Supply Modes</div><h2>ULT 超低溫 vs 活〆直送</h2></div>
+    <div class="en">Choose by menu structure</div>
+  </div>
+  <div class="modes">
+    <article class="mode ult">
+      <span class="tag">Mode 01</span>
+      <h3>ULT 超低溫</h3>
+      <div class="temp">Super Frozen · -60°C</div>
+      <p>産地捕獲後即殺即凍至 -60°C 以下，全程 ULT 冷鏈運輸。適合高脂魚類與跨季供應。</p>
+      <ul>
+        <li>核心品項：本鮪中腹／大腹、金目鯛、鮟鱇</li>
+        <li>保質期：-60°C 可保存 12 個月</li>
+        <li>解凍方式：配送時附專業解凍 SOP</li>
+        <li>優勢：顏色、脂感、纖維接近新鮮</li>
+      </ul>
+    </article>
+    <article class="mode">
+      <span class="tag">Mode 02</span>
+      <h3>活〆當日空運</h3>
+      <div class="temp">Fresh Kill · 4°C</div>
+      <p>日本産地當日活〆處理，冰鮮打包直接空運香港，主廚凌晨下單，當晚上桌。</p>
+      <ul>
+        <li>核心品項：真鯛、青甘、縞鯵、平目、金目鯛（小型）</li>
+        <li>保質期：冰鮮 3–5 天</li>
+        <li>截單：前一天 12:00 HKT</li>
+        <li>優勢：最高鮮度，適合刺身首選</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Catalogue</div><h2>核心品項清單</h2></div>
+    <div class="en">Core species list</div>
+  </div>
+  <table class="species-table">
+    <thead>
+      <tr><th>日文</th><th>英文</th><th>產地</th><th>供貨模式</th><th>備註</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="jp">本鮪（大間）</div><div class="en">Ōma Bluefin Tuna</div></td>
+        <td>Thunnus orientalis</td>
+        <td>青森大間 / 近海延繩釣</td>
+        <td><span class="badge ult">ULT</span></td>
+        <td>中腹 / 大腹按條分切供貨</td>
+      </tr>
+      <tr>
+        <td><div class="jp">金目鯛</div><div class="en">Splendid Alfonsino</div></td>
+        <td>Beryx splendens</td>
+        <td>千葉銚子 / 靜岡伊豆</td>
+        <td><span class="badge ult">ULT</span> <span class="badge fresh">Fresh</span></td>
+        <td>紅色魚代表，刺身 / 煮付皆宜</td>
+      </tr>
+      <tr>
+        <td><div class="jp">鮟鱇（肝）</div><div class="en">Monkfish &amp; Liver</div></td>
+        <td>Lophius litulon</td>
+        <td>福島 / 茨城常磐</td>
+        <td><span class="badge ult">ULT</span></td>
+        <td>鮟鱇肝為「海中鵝肝」</td>
+      </tr>
+      <tr>
+        <td><div class="jp">真鯛</div><div class="en">Red Sea Bream</div></td>
+        <td>Pagrus major</td>
+        <td>愛媛 / 長崎養殖</td>
+        <td><span class="badge fresh">Fresh</span></td>
+        <td>活〆當日直送首選</td>
+      </tr>
+      <tr>
+        <td><div class="jp">青甘（鰤）</div><div class="en">Japanese Amberjack</div></td>
+        <td>Seriola quinqueradiata</td>
+        <td>鹿兒島 / 長崎</td>
+        <td><span class="badge fresh">Fresh</span></td>
+        <td>冬季寒鰤，脂感最重</td>
+      </tr>
+      <tr>
+        <td><div class="jp">縞鯵</div><div class="en">Striped Jack</div></td>
+        <td>Pseudocaranx dentex</td>
+        <td>九州 / 四國</td>
+        <td><span class="badge fresh">Fresh</span></td>
+        <td>夏季刺身常備</td>
+      </tr>
+      <tr>
+        <td><div class="jp">平目</div><div class="en">Japanese Flounder</div></td>
+        <td>Paralichthys olivaceus</td>
+        <td>青森 / 茨城</td>
+        <td><span class="badge fresh">Fresh</span></td>
+        <td>冬季緣側受歡迎</td>
+      </tr>
+      <tr>
+        <td><div class="jp">鮭兒・時鮭</div><div class="en">Keiji / Tokishirazu Salmon</div></td>
+        <td>Oncorhynchus keta</td>
+        <td>北海道 / 羅臼</td>
+        <td><span class="badge ult">ULT</span></td>
+        <td>稀有回游期限定</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-family:var(--serif-zh); font-size:14px; color:var(--ink-60); margin-top:24px; line-height:1.8;">
+    另有蟹（タラバ / ズワイ）、貝類（ホタテ / アワビ）、魚卵（いくら / 数の子）等特殊品項，依季節供應。<br>完整目錄請聯絡獲取。
+  </p>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <h3>申請本週海味現貨</h3>
+      <div class="h-en">Weekly seafood availability · ULT &amp; Fresh</div>
+    </div>
+    <div class="cta-item"><div class="k">WhatsApp</div><div class="v lg">+852 6774 4458</div></div>
+    <div class="cta-item"><div class="k">Email</div><div class="v lg">wagyuuniws@gmail.com</div></div>
+    <div class="cta-item"><a class="btn-primary" href="mailto:wagyuuniws@gmail.com?subject=%E7%94%B3%E8%AB%8B%E6%B5%B7%E5%91%B3%E7%8F%BE%E8%B2%A8">申請清單 Request Sheet</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="row">
+    <div>© 2026 UMI WA 海和 · Hong Kong</div>
+    <div>Sourced in Japan · Served in Hong Kong</div>
+    <div><a href="index.html">← Back to home</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

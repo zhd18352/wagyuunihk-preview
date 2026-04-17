@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>北海道海膽 · 海和 UMI WA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./shared.css">
+<style>
+  .hero-img {
+    width: 100%; height: 60vh; min-height: 420px; max-height: 640px;
+    background: #111 center/cover no-repeat;
+    background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.35)),
+      url("https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=2400&q=85&auto=format&fit=crop");
+  }
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px;
+  }
+  .variety {
+    padding: 32px; background: var(--cream); border: 1px solid var(--line);
+  }
+  .variety h3 {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 24px; letter-spacing: .08em; margin: 0 0 6px;
+  }
+  .variety .en { font-family: var(--serif-en); font-style: italic; color: var(--ink-50); font-size: 16px; margin-bottom: 18px; }
+  .variety p { font-size: 14px; line-height: 1.9; color: var(--ink-70); margin: 0 0 14px; }
+  .variety ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-70); line-height: 1.9; }
+  .calendar {
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-top: 40px; font-size: 11px;
+  }
+  .cal-cell {
+    padding: 12px 0; text-align: center; background: var(--cream); color: var(--ink-60);
+    font-family: var(--serif-en); font-style: italic; letter-spacing: .1em;
+  }
+  .cal-cell.peak { background: var(--navy); color: #fff; }
+  .cal-cell.mid { background: #c8d1e2; color: var(--ink); }
+  .cal-legend {
+    display: flex; gap: 24px; margin-top: 16px; font-size: 12px; color: var(--ink-60); font-family: var(--serif-zh);
+  }
+  .cal-legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: middle; }
+  .cal-legend .peak::before { background: var(--navy); }
+  .cal-legend .mid::before { background: #c8d1e2; }
+  .cal-legend .off::before { background: var(--cream); border: 1px solid var(--line); }
+  @media (max-width: 900px) { .compare { grid-template-columns: 1fr; } .calendar { grid-template-columns: repeat(6, 1fr); } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark"><a href="index.html">UMI WA<span class="zh">海和</span></a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="wagyu.html">A5 Wagyu</a>
+      <a href="uni.html" class="active">Hokkaido Uni</a>
+      <a href="seafood.html">Seafood</a>
+      <a href="index.html#traceability">Sourcing</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><span class="on">中</span> / EN</div>
+      <a class="btn-primary" href="index.html#contact">申請報價</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-img"></div>
+
+<header class="page-head">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Hokkaido Uni</div>
+  <h1>北海道海膽</h1>
+  <div class="en">Hokkaido Sea Urchin — Bafun &amp; Murasaki</div>
+</header>
+
+<section class="sec">
+  <div class="prose">
+    <p class="lead">根室・利尻・禮文島産的馬糞海膽與紫海膽，每日清晨築地競拍後空運香港。無明礬處理，木折箱冷藏 24–36 小時內到達餐廳。</p>
+    <p>我們拒絕使用明礬延長保質期——海和的海膽上桌時，仍保有原始的海水甘甜與入口即化的脂感。代價是：供應量小，季節性強，需要主廚提前預訂。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Two Varieties</div><h2>馬糞 vs 紫海膽</h2></div>
+    <div class="en">Bafun &amp; Murasaki</div>
+  </div>
+  <div class="compare">
+    <article class="variety">
+      <h3>馬糞海膽 Bafun</h3>
+      <div class="en">Short-spined urchin · 蝦夷馬糞</div>
+      <p>殼短刺密，膽黃呈濃郁橙紅色。味道濃厚、脂感重、甘味最深。主廚首選於頂級壽司與單品刺身。</p>
+      <ul>
+        <li>産地：根室・厚岸・浜中</li>
+        <li>盛産期：6–8 月</li>
+        <li>味道曲線：甘 → 濃 → 微苦尾韻</li>
+        <li>等級：A / 特 A / SS 品</li>
+      </ul>
+    </article>
+    <article class="variety">
+      <h3>紫海膽 Murasaki</h3>
+      <div class="en">Long-spined urchin · 北紫海膽</div>
+      <p>殼長刺疏，膽黃呈淡金黃色。味道清爽、甘味輕盈、顏色穩定，適合需大量入饌與擺盤展示。</p>
+      <ul>
+        <li>産地：利尻・禮文・奧尻</li>
+        <li>盛産期：5–8 月</li>
+        <li>味道曲線：甘 → 輕 → 清爽</li>
+        <li>等級：A / 特 A / SS 品</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Season</div><h2>全年供應曆</h2></div>
+    <div class="en">Monthly availability</div>
+  </div>
+  <div class="calendar">
+    <div class="cal-cell">Jan</div><div class="cal-cell mid">Feb</div><div class="cal-cell mid">Mar</div>
+    <div class="cal-cell mid">Apr</div><div class="cal-cell peak">May</div><div class="cal-cell peak">Jun</div>
+    <div class="cal-cell peak">Jul</div><div class="cal-cell peak">Aug</div><div class="cal-cell mid">Sep</div>
+    <div class="cal-cell">Oct</div><div class="cal-cell">Nov</div><div class="cal-cell">Dec</div>
+  </div>
+  <div class="cal-legend">
+    <span class="peak">盛產期（質量峰值）</span>
+    <span class="mid">穩定供應</span>
+    <span class="off">淡季（需預訂，量少）</span>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Specifications</div><h2>規格與配送</h2></div>
+    <div class="en">Order details</div>
+  </div>
+  <table class="spec-table">
+    <tr><th>産地</th><td>北海道 · 根室 / 利尻 / 禮文 / 奧尻 / 厚岸</td></tr>
+    <tr><th>品種</th><td>馬糞（Bafun / 蝦夷馬糞）· 紫海膽（Murasaki / 北紫）</td></tr>
+    <tr><th>等級</th><td>A 品 · 特 A 品 · SS 品（需預訂）</td></tr>
+    <tr><th>包裝</th><td>100g 木折箱 · 200g 木折箱 · 無明礬處理</td></tr>
+    <tr><th>最小起訂</th><td>200g / 單批次</td></tr>
+    <tr><th>配送時效</th><td>築地競拍後 36 小時內到香港餐廳（4°C 全程冷藏）</td></tr>
+    <tr><th>截單時間</th><td>每週四 18:00 HKT 前下單，下週一到港</td></tr>
+    <tr><th>附帶文件</th><td>築地競拍票據 · 無明礬證明 · 冷鏈溫度紀錄</td></tr>
+  </table>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <h3>預訂本週北海道海膽</h3>
+      <div class="h-en">Reserve before Thu 18:00 HKT · Delivered Mon</div>
+    </div>
+    <div class="cta-item"><div class="k">WhatsApp</div><div class="v lg">+852 6774 4458</div></div>
+    <div class="cta-item"><div class="k">Email</div><div class="v lg">wagyuuniws@gmail.com</div></div>
+    <div class="cta-item"><a class="btn-primary" href="mailto:wagyuuniws@gmail.com?subject=%E9%A0%90%E8%A8%82%E6%B5%B7%E8%86%BD">預訂 Reserve</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="row">
+    <div>© 2026 UMI WA 海和 · Hong Kong</div>
+    <div>Sourced in Japan · Served in Hong Kong</div>
+    <div><a href="index.html">← Back to home</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

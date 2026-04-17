@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>海和 Umi Wa — 日本産地直送・香港高端餐飲批發 [變體 A：Poseidon 大圖英雄]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --ink: #1a1a1a;
+    --ink-60: #555;
+    --ink-30: #b8b8b8;
+    --line: #e8e6e1;
+    --paper: #ffffff;
+    --cream: #faf7f2;
+    --navy: #1b2a4e;
+    --serif-zh: "Noto Serif TC", "Source Han Serif", serif;
+    --serif-en: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* Top nav */
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 10;
+    background: rgba(255,255,255,.88);
+    backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 22px 48px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .mark { font-family: var(--serif-en); font-weight: 500; font-size: 22px; letter-spacing: .18em; }
+  .mark .zh { font-family: var(--serif-zh); margin-left: 10px; letter-spacing: .3em; font-size: 18px; }
+  .menu { display: flex; gap: 40px; }
+  .menu a {
+    position: relative; font-size: 13px; letter-spacing: .2em; text-transform: uppercase;
+    padding-top: 14px; color: var(--ink);
+  }
+  .menu a::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--ink);
+  }
+  .menu a:hover { color: var(--navy); }
+
+  /* Hero */
+  .hero {
+    position: relative; width: 100%; height: 100vh; min-height: 720px; max-height: 960px;
+    background: #111 center/cover no-repeat;
+    background-image:
+      linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.5)),
+      url("https://images.unsplash.com/photo-1558030006-450675393462?w=2400&q=85&auto=format&fit=crop");
+  }
+  .hero-copy {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; color: #fff; text-align: center; padding: 0 24px;
+  }
+  .eyebrow {
+    font-family: var(--serif-en); font-style: italic; font-size: 16px; letter-spacing: .3em;
+    text-transform: uppercase; opacity: .88; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(40px, 5.6vw, 76px); letter-spacing: .12em; line-height: 1.3; margin: 0 0 18px;
+  }
+  .hero-sub {
+    font-family: var(--serif-en); font-size: clamp(18px, 1.6vw, 24px); font-style: italic; opacity: .9;
+    letter-spacing: .08em; margin-bottom: 56px;
+  }
+  .hero-cta {
+    font-family: var(--serif-en); font-size: 17px; letter-spacing: .2em; font-style: italic;
+    padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.6);
+  }
+  .scroll-hint {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    font-family: var(--serif-en); font-size: 11px; letter-spacing: .4em; color: #fff; opacity: .7;
+  }
+
+  /* Intro / stats */
+  section { padding: 120px 48px; max-width: 1280px; margin: 0 auto; }
+  .intro { text-align: center; max-width: 820px; }
+  .section-label {
+    font-family: var(--serif-en); font-style: italic; font-size: 14px; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--ink-60); margin-bottom: 24px;
+  }
+  .intro h2 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(28px, 3vw, 42px); letter-spacing: .08em; line-height: 1.6; margin: 0 auto 32px;
+  }
+  .intro p {
+    font-family: var(--serif-zh); font-size: 17px; line-height: 2; color: var(--ink-60);
+    max-width: 640px; margin: 0 auto;
+  }
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    margin-top: 80px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .stat {
+    padding: 48px 24px; text-align: center;
+    border-right: 1px solid var(--line);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--serif-en); font-weight: 500; font-size: 48px; color: var(--ink);
+    line-height: 1; margin-bottom: 14px;
+  }
+  .stat-label {
+    font-family: var(--serif-zh); font-size: 13px; color: var(--ink-60); letter-spacing: .15em;
+  }
+
+  /* Product triptych */
+  .triptych { padding-top: 40px; }
+  .triptych h3 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(24px, 2.4vw, 34px); letter-spacing: .12em; text-align: center; margin: 0 0 72px;
+  }
+  .products {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px;
+  }
+  .product { }
+  .product-img {
+    aspect-ratio: 4/5; width: 100%; background: var(--cream) center/cover no-repeat;
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .product-img.a { background-image: url("https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1200&q=85&auto=format&fit=crop"); }
+  .product-img.b { background-image: url("https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=1200&q=85&auto=format&fit=crop"); }
+  .product-img.c { background-image: url("https://images.unsplash.com/photo-1534482421-64566f976cfa?w=1200&q=85&auto=format&fit=crop"); }
+  .product-no {
+    font-family: var(--serif-en); font-style: italic; font-size: 14px; color: var(--ink-60);
+    letter-spacing: .3em; margin-bottom: 10px;
+  }
+  .product-name {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: 26px; letter-spacing: .1em; margin-bottom: 10px;
+  }
+  .product-en {
+    font-family: var(--serif-en); font-style: italic; font-size: 17px; color: var(--ink-60); margin-bottom: 18px;
+  }
+  .product-desc {
+    font-family: var(--serif-zh); font-size: 15px; line-height: 1.9; color: var(--ink-60); margin-bottom: 20px;
+  }
+  .product-link {
+    font-family: var(--serif-en); font-style: italic; font-size: 15px; color: var(--navy);
+    border-bottom: 1px solid var(--navy); padding-bottom: 2px;
+  }
+
+  /* Trust band */
+  .trust {
+    background: var(--cream); padding: 120px 48px;
+  }
+  .trust-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .trust-img {
+    aspect-ratio: 4/3;
+    background: #ddd center/cover no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1605522561233-768ad7a8fabd?w=1600&q=85&auto=format&fit=crop");
+  }
+  .trust-copy h3 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(26px, 2.6vw, 38px); letter-spacing: .1em; line-height: 1.5; margin: 18px 0 28px;
+  }
+  .trust-copy p {
+    font-family: var(--serif-zh); font-size: 16px; line-height: 2; color: var(--ink-60); margin: 0 0 18px;
+  }
+  .trust-list {
+    margin: 32px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line);
+  }
+  .trust-list li {
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; font-family: var(--serif-zh); font-size: 15px;
+  }
+  .trust-list .k { color: var(--ink); letter-spacing: .1em; }
+  .trust-list .v { color: var(--ink-60); font-family: var(--serif-en); font-style: italic; }
+
+  /* CTA contact */
+  .cta { padding: 140px 48px; text-align: center; }
+  .cta h2 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(32px, 3.4vw, 48px); letter-spacing: .12em; line-height: 1.4; margin: 18px 0 32px;
+  }
+  .cta p {
+    font-family: var(--serif-zh); font-size: 16px; color: var(--ink-60); margin: 0 auto 48px; max-width: 600px;
+  }
+  .cta-row {
+    display: inline-flex; gap: 48px; padding-top: 32px; border-top: 1px solid var(--line);
+    font-family: var(--serif-en); font-style: italic; font-size: 16px; letter-spacing: .15em;
+  }
+  .cta-row span { color: var(--ink-60); margin-right: 8px; font-size: 12px; letter-spacing: .3em; text-transform: uppercase; }
+
+  /* Footer */
+  footer {
+    padding: 56px 48px; border-top: 1px solid var(--line);
+    font-family: var(--serif-en); font-size: 12px; letter-spacing: .25em; color: var(--ink-60);
+    display: flex; justify-content: space-between; text-transform: uppercase;
+  }
+
+  /* Variant badge */
+  .badge {
+    position: fixed; bottom: 20px; left: 20px; z-index: 100;
+    background: var(--ink); color: #fff; font-family: var(--serif-en); font-style: italic;
+    font-size: 12px; letter-spacing: .2em; padding: 10px 16px; border-radius: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-inner { padding: 16px 20px; }
+    .menu { display: none; }
+    section, .trust, .cta { padding: 72px 20px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .products { grid-template-columns: 1fr; gap: 48px; }
+    .trust-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark">UMI WA<span class="zh">海和</span></div>
+    <div class="menu">
+      <a href="#">HOME</a>
+      <a href="#">WAGYU</a>
+      <a href="#">UNI</a>
+      <a href="#">SEAFOOD</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Since the mountains of Tajima</div>
+    <h1>源頭直採　日本産地</h1>
+    <div class="hero-sub">Japan to Hong Kong, direct — for the ones who know.</div>
+    <a class="hero-cta" href="#">立即洽談 · Inquire →</a>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</header>
+
+<section class="intro">
+  <div class="section-label">About — 關於海和</div>
+  <h2>專為高端日本料理而存在的<br>食材供應體系</h2>
+  <p>海和源自日本産地直採的理念，為香港頂級日本料理餐廳提供 A5 和牛、北海道刺身海膽及日式海味系列。每週三班空運，冷鏈溯源，價格透明，讓主廚專注於料理本身。</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">12<sup style="font-size:.45em;vertical-align:top;margin-left:2px;">+</sup></div><div class="stat-label">年産地採購經驗</div></div>
+    <div class="stat"><div class="stat-num">3<sup style="font-size:.45em;vertical-align:top;margin-left:2px;">×</sup></div><div class="stat-label">每週日本空運直送</div></div>
+    <div class="stat"><div class="stat-num">50<sup style="font-size:.45em;vertical-align:top;margin-left:2px;">+</sup></div><div class="stat-label">合作日本料理餐廳</div></div>
+    <div class="stat"><div class="stat-num">DNA</div><div class="stat-label">全程溯源認證</div></div>
+  </div>
+</section>
+
+<section class="triptych">
+  <h3>三大核心品類</h3>
+  <div class="products">
+    <article class="product">
+      <div class="product-img a"></div>
+      <div class="product-no">01 — Wagyu</div>
+      <div class="product-name">A5 和牛</div>
+      <div class="product-en">Tajima · Miyazaki · Kagoshima</div>
+      <div class="product-desc">選自日本三大名産地，BMS 8–12 級別，涵蓋整頭部位分切，支援常溫熟成與真空冷凍兩種配送方式。</div>
+      <a class="product-link" href="#">View specs →</a>
+    </article>
+    <article class="product">
+      <div class="product-img b"></div>
+      <div class="product-no">02 — Uni</div>
+      <div class="product-name">北海道海膽</div>
+      <div class="product-en">Hokkaido Bafun &amp; Murasaki</div>
+      <div class="product-desc">每日清晨築地・根室空運直送，無明礬處理，木折箱冷藏到達，穩定供應 A 品至 SS 品等級。</div>
+      <a class="product-link" href="#">View specs →</a>
+    </article>
+    <article class="product">
+      <div class="product-img c"></div>
+      <div class="product-no">03 — Seafood</div>
+      <div class="product-name">日式海味</div>
+      <div class="product-en">Sashimi Grade &amp; Super Frozen</div>
+      <div class="product-desc">本鮪・金目鯛・鮟鱇・真鯛，ULT 超低溫處理與活〆當日直送兩種供貨模式，按主廚需求配比。</div>
+      <a class="product-link" href="#">View specs →</a>
+    </article>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-img"></div>
+    <div class="trust-copy">
+      <div class="section-label">Traceability</div>
+      <h3>從牧場・漁港到<br>您的廚房，全鏈透明</h3>
+      <p>每一批貨附帶日本原産認證、DNA 檢測報告、冷鏈溫度曲線與海關清關憑證。主廚可憑 Batch No. 在我們系統即時追溯。</p>
+      <ul class="trust-list">
+        <li><span class="k">日本原産地證明</span><span class="v">every shipment</span></li>
+        <li><span class="k">DNA 血統溯源</span><span class="v">A5 wagyu only</span></li>
+        <li><span class="k">冷鏈溫度紀錄</span><span class="v">-60°C to 4°C</span></li>
+        <li><span class="k">香港食環署報關</span><span class="v">verified</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="section-label">Contact — 聯絡</div>
+  <h2>為您的餐廳定制專屬供應方案</h2>
+  <p>告訴我們您的菜單結構與每週用量，我們將提供專屬報價、試單配送及穩定供貨計劃。</p>
+  <div class="cta-row">
+    <div><span>whatsapp</span>+852 6774 4458</div>
+    <div><span>email</span>wagyuuniws@gmail.com</div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 UMI WA 海和 · HONG KONG</div>
+  <div>VARIANT A — Poseidon Hero</div>
+</footer>
+
+<div class="badge">Variant A · Poseidon Hero</div>
+
+</body>
+</html>

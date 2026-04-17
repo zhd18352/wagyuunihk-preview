@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>關於海和 · UMI WA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./shared.css">
+<style>
+  .hero-img {
+    width: 100%; height: 56vh; min-height: 400px; max-height: 600px;
+    background: #111 center/cover no-repeat;
+    background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.4)),
+      url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=2400&q=85&auto=format&fit=crop");
+  }
+  .story {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .story img {
+    aspect-ratio: 4/5; width: 100%; background: #ddd center/cover no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1558030006-450675393462?w=1400&q=85&auto=format&fit=crop");
+  }
+  .timeline {
+    margin-top: 40px; border-left: 1px solid var(--line); padding-left: 32px;
+  }
+  .tl-item { padding-bottom: 36px; position: relative; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -40px; top: 6px;
+    width: 9px; height: 9px; background: var(--navy); border-radius: 50%;
+  }
+  .tl-year {
+    font-family: var(--serif-en); font-style: italic; font-size: 14px; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--ink-50); margin-bottom: 6px;
+  }
+  .tl-title {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 20px; letter-spacing: .08em; margin-bottom: 8px;
+  }
+  .tl-body { font-size: 14px; line-height: 1.9; color: var(--ink-70); }
+  .faq details {
+    border-bottom: 1px solid var(--line); padding: 24px 0;
+  }
+  .faq summary {
+    cursor: pointer; font-family: var(--serif-zh); font-size: 18px; letter-spacing: .05em;
+    color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq summary::after { content: "+"; font-family: var(--serif-en); font-size: 24px; color: var(--ink-50); transition: transform .2s; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq summary:hover { color: var(--navy); }
+  .faq details p {
+    font-family: var(--serif-zh); font-size: 15px; line-height: 2; color: var(--ink-70);
+    margin: 18px 0 0;
+  }
+  @media (max-width: 900px) { .story { grid-template-columns: 1fr; gap: 32px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark"><a href="index.html">UMI WA<span class="zh">海和</span></a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="wagyu.html">A5 Wagyu</a>
+      <a href="uni.html">Hokkaido Uni</a>
+      <a href="seafood.html">Seafood</a>
+      <a href="index.html#traceability">Sourcing</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><span class="on">中</span> / EN</div>
+      <a class="btn-primary" href="index.html#contact">申請報價</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-img"></div>
+
+<header class="page-head">
+  <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+  <h1>關於海和</h1>
+  <div class="en">About Umi Wa — Since 2014</div>
+</header>
+
+<section class="sec">
+  <div class="story">
+    <div>
+      <div class="lbl" style="font-family:var(--serif-en); font-style:italic; font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-50); margin-bottom:20px;">Our Story</div>
+      <h2 style="font-family:var(--serif-zh); font-weight:400; font-size:clamp(28px,2.8vw,40px); letter-spacing:.08em; line-height:1.4; margin:0 0 28px;">為挑剔的主廚，<br>保留最後一塊 A5</h2>
+      <p style="font-family:var(--serif-zh); font-size:16px; line-height:2; color:var(--ink-70); margin:0 0 18px;">
+        2014 年，創辦人在日本九州第一次走進但馬牛牧場，看到一頭頭和牛按血統、飼料、出欄日期被精心管理。回到香港後發現——大部分高端日本料理店正為拿不到穩定的稀有部位而頭疼。
+      </p>
+      <p style="font-family:var(--serif-zh); font-size:16px; line-height:2; color:var(--ink-70); margin:0 0 18px;">
+        海和的答案很簡單：不走貿易商路線，自己在日本九州與北海道建採購團隊，整頭牛整箱海膽直接買下，每週三班空運香港。價格透明、規格可查、部位可指定——讓主廚把精力留給料理本身。
+      </p>
+      <p style="font-family:var(--serif-zh); font-size:16px; line-height:2; color:var(--ink-70); margin:0 0 18px;">
+        十二年過去了，我們的合作名單從 3 家日料店擴展到 50+ 家香港高端日本料理餐廳，覆蓋壽司、割烹、鐵板燒、懷石與奧馬咖司。但我們依然只做一件事：把日本産地最真實的味道，帶到主廚的砧板上。
+      </p>
+    </div>
+    <img alt="A5 wagyu cuts">
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Timeline</div><h2>海和十二年</h2></div>
+    <div class="en">Milestones since 2014</div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2014 · Founded</div>
+      <div class="tl-title">海和於香港成立，首批 3 家日料餐廳合作</div>
+      <div class="tl-body">從單一供應商的模式切入，在日本兵庫設立第一個常駐採購點。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2016 · Hokkaido</div>
+      <div class="tl-title">北海道海膽直採線啟動</div>
+      <div class="tl-body">與根室、利尻、禮文三大産地漁協建立直採關係，供應刺身級海膽。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2019 · ULT</div>
+      <div class="tl-title">引入日本 ULT -60°C 超低溫冷鏈</div>
+      <div class="tl-body">打通大間本鮪、金目鯛等高脂魚類的穩定跨境供應。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2022 · DNA</div>
+      <div class="tl-title">全鏈 DNA 血統溯源系統上線</div>
+      <div class="tl-body">主廚可憑 Batch No. 查詢和牛血統、牧場、出欄批次。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2026 · Today</div>
+      <div class="tl-title">50+ 家香港高端日本料理餐廳長期合作</div>
+      <div class="tl-body">覆蓋壽司、割烹、鐵板燒、懷石料理、奧馬咖司五大形態。</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="sec-title">
+    <div><div class="lbl">FAQ</div><h2>常見問題</h2></div>
+    <div class="en">Frequently asked</div>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>最小起訂量是多少？</summary>
+      <p>A5 和牛 2 kg / 批次（首次合作 5 kg 起）；海膽 200g / 批次；海味類 1 kg / 批次或按條計。長期合作客戶可分批配送降低單次起訂。</p>
+    </details>
+    <details>
+      <summary>訂貨與配送時效？</summary>
+      <p>每週截單時間為週四 18:00 HKT，下週一、三、五任選空運班次到港。緊急補貨可在 6 小時內從香港倉配送至餐廳。海膽需預訂，自築地競拍後 36 小時到達。</p>
+    </details>
+    <details>
+      <summary>價格體系如何？是否每週浮動？</summary>
+      <p>和牛與海鮮價格按日本産地當週拍賣價浮動 +固定服務費，我們每週四發送現貨清單與報價。長期合作客戶可鎖定部分核心部位的季度價格。</p>
+    </details>
+    <details>
+      <summary>首次合作如何啟動？</summary>
+      <p>填寫報價申請後，我們會約 15 分鐘電話了解您的菜單結構、週用量與常用部位。之後提供首單試配方案（通常 2-3 kg 和牛 + 200g uni + 部分海味），餐廳試用滿意後進入正式月結合作。</p>
+    </details>
+    <details>
+      <summary>付款方式與賬期？</summary>
+      <p>首次合作 T/T 預付款。穩定合作 3 個月後開放月結賬期（30 天）。支持港幣、日圓計價與結算。</p>
+    </details>
+    <details>
+      <summary>是否提供溯源文件？</summary>
+      <p>每一批次和牛附帶日本原産地證明、BMS 評級證書、DNA 血統報告、冷鏈溫度曲線。海膽附築地競拍票據與無明礬聲明。主廚可憑 Batch No. 在我們系統即時追溯。</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <h3>準備合作？發一句話告訴我們您的菜單</h3>
+      <div class="h-en">Tell us your menu. We'll build the supply chain.</div>
+    </div>
+    <div class="cta-item"><div class="k">WhatsApp</div><div class="v lg">+852 6774 4458</div></div>
+    <div class="cta-item"><div class="k">Email</div><div class="v lg">wagyuuniws@gmail.com</div></div>
+    <div class="cta-item"><a class="btn-primary" href="mailto:wagyuuniws@gmail.com?subject=%E5%90%88%E4%BD%9C%E5%92%A8%E8%A9%A2">合作諮詢 Partner</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="row">
+    <div>© 2026 UMI WA 海和 · Hong Kong</div>
+    <div>Sourced in Japan · Served in Hong Kong</div>
+    <div><a href="index.html">← Back to home</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

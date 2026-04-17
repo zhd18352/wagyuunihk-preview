@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A5 黑毛和牛 · 海和 UMI WA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./shared.css">
+<style>
+  .hero-img {
+    width: 100%; height: 60vh; min-height: 420px; max-height: 640px;
+    margin-top: 0;
+    background: #111 center/cover no-repeat;
+    background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.4)),
+      url("https://images.unsplash.com/photo-1558030006-450675393462?w=2400&q=85&auto=format&fit=crop");
+  }
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  }
+  .two-col img, .two-col .media {
+    aspect-ratio: 4/5; width: 100%; background: var(--gray) center/cover no-repeat;
+  }
+  .prefecture-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px;
+  }
+  .pref {
+    padding: 28px; background: var(--cream); border: 1px solid var(--line);
+  }
+  .pref .flag {
+    font-family: var(--serif-en); font-style: italic; font-size: 12px; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--ink-50); margin-bottom: 8px;
+  }
+  .pref h3 {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 22px; letter-spacing: .08em;
+    margin: 0 0 12px;
+  }
+  .pref p { font-size: 14px; color: var(--ink-70); line-height: 1.8; margin: 0 0 10px; }
+  .pref .tag { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--navy); }
+  .cuts {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;
+  }
+  .cut {
+    padding: 20px; border: 1px solid var(--line);
+  }
+  .cut .jp { font-family: var(--serif-zh); font-size: 17px; letter-spacing: .08em; margin-bottom: 4px; }
+  .cut .en { font-family: var(--serif-en); font-style: italic; font-size: 14px; color: var(--ink-50); margin-bottom: 8px; }
+  .cut .pct { font-family: var(--serif-en); font-size: 15px; color: var(--navy); }
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; gap: 32px; }
+    .prefecture-grid, .cuts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark"><a href="index.html">UMI WA<span class="zh">海和</span></a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="wagyu.html" class="active">A5 Wagyu</a>
+      <a href="uni.html">Hokkaido Uni</a>
+      <a href="seafood.html">Seafood</a>
+      <a href="index.html#traceability">Sourcing</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><span class="on">中</span> / EN</div>
+      <a class="btn-primary" href="index.html#contact">申請報價</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-img"></div>
+
+<header class="page-head">
+  <div class="breadcrumb"><a href="index.html">Home</a> / A5 Wagyu</div>
+  <h1>A5 黑毛和牛</h1>
+  <div class="en">Japanese Black Wagyu — Tajima · Miyazaki · Kagoshima</div>
+</header>
+
+<section class="sec">
+  <div class="prose">
+    <p class="lead">海和只採購 BMS 8 級以上的 A5 黑毛和牛。兵庫・宮崎・鹿兒島三大名産地，整頭進口、部位分切、按餐廳菜單結構配比。</p>
+    <p>整頭進口意味著主廚能穩定拿到稀有部位——入口即化的シャトーブリアン、霜降最深的ザブトン、涮肉專用的リブキャップ——而不用等到肉商剛好「有貨」。</p>
+    <p>所有和牛附帶日本原産地證明、BMS 評級證書、DNA 血統溯源報告。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Three Prefectures</div><h2>三大名産地覆蓋全年供應</h2></div>
+    <div class="en">Year-round supply rotation</div>
+  </div>
+  <div class="prefecture-grid">
+    <article class="pref">
+      <div class="flag">Hyōgo · 兵庫</div>
+      <h3>但馬牛 Tajima</h3>
+      <p>神戶牛血統源頭。脂肪凝固點低，入口化感最細膩。風味層次深沉，尾韻帶甘。</p>
+      <div class="tag">BMS 10–12 · Premium tier</div>
+    </article>
+    <article class="pref">
+      <div class="flag">Miyazaki · 宮崎</div>
+      <h3>宮崎牛 Miyazaki</h3>
+      <p>全國和牛能力共進會四連霸。霜降分布均勻，肉質緊實有彈性，適合厚切燒烤。</p>
+      <div class="tag">BMS 8–11 · Balanced tier</div>
+    </article>
+    <article class="pref">
+      <div class="flag">Kagoshima · 鹿兒島</div>
+      <h3>鹿兒島牛 Kagoshima</h3>
+      <p>日本產量最大的和牛産地，全年穩定。脂質清爽，適合多部位分切與日常菜單。</p>
+      <div class="tag">BMS 8–10 · Reliable tier</div>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Cuts</div><h2>24 個主要分切部位</h2></div>
+    <div class="en">Whole-carcass breakdown</div>
+  </div>
+  <div class="cuts">
+    <div class="cut"><div class="jp">シャトーブリアン</div><div class="en">Chateaubriand</div><div class="pct">~2% · 最稀有</div></div>
+    <div class="cut"><div class="jp">サーロイン</div><div class="en">Sirloin</div><div class="pct">主力部位</div></div>
+    <div class="cut"><div class="jp">リブロース</div><div class="en">Ribeye</div><div class="pct">霜降最密</div></div>
+    <div class="cut"><div class="jp">ヒレ</div><div class="en">Tenderloin</div><div class="pct">低脂細嫩</div></div>
+    <div class="cut"><div class="jp">ザブトン</div><div class="en">Zabuton</div><div class="pct">肩胛霜降</div></div>
+    <div class="cut"><div class="jp">ミスジ</div><div class="en">Misuji</div><div class="pct">~1kg/頭</div></div>
+    <div class="cut"><div class="jp">イチボ</div><div class="en">Ichibo / Tri-tip</div><div class="pct">臀尖</div></div>
+    <div class="cut"><div class="jp">ランプ</div><div class="en">Rump</div><div class="pct">瘦肉首選</div></div>
+    <div class="cut"><div class="jp">トモサンカク</div><div class="en">Tomosankaku</div><div class="pct">霜降 + 緊實</div></div>
+    <div class="cut"><div class="jp">カイノミ</div><div class="en">Kainomi</div><div class="pct">肋間稀有</div></div>
+    <div class="cut"><div class="jp">マルシン</div><div class="en">Marushin</div><div class="pct">腿芯部</div></div>
+    <div class="cut"><div class="jp">カルビ</div><div class="en">Short Rib</div><div class="pct">燒肉經典</div></div>
+  </div>
+  <p style="font-family:var(--serif-zh); font-size:14px; color:var(--ink-60); margin-top:32px; line-height:1.8;">
+    另有 12 個次要部位可供選擇，包含內臟系（ハラミ／ミノ／センマイ）與特殊部位。<br>完整分切圖鑑請聯絡獲取。
+  </p>
+</section>
+
+<section class="sec">
+  <div class="sec-title">
+    <div><div class="lbl">Specifications</div><h2>規格與配送選項</h2></div>
+    <div class="en">Technical sheet</div>
+  </div>
+  <table class="spec-table">
+    <tr><th>等級</th><td>A5 · BMS 8–12</td></tr>
+    <tr><th>產地</th><td>日本兵庫 / 宮崎 / 鹿兒島（依季節調度）</td></tr>
+    <tr><th>部位</th><td>24 個主要部位 + 12 個次要部位，支援全頭預訂或分切配比</td></tr>
+    <tr><th>處理方式</th><td>真空冷凍 -60°C ULT · 濕式熟成 3–28 天 · 乾式熟成（預約）</td></tr>
+    <tr><th>最小起訂</th><td>2 kg / 單批次（首次合作 5 kg 起）</td></tr>
+    <tr><th>配送時效</th><td>3 個工作日內送達（緊急補貨 6 小時內）</td></tr>
+    <tr><th>附帶文件</th><td>日本原産地證明 · BMS 評級書 · DNA 血統報告 · 冷鏈溫度曲線</td></tr>
+    <tr><th>付款條件</th><td>首次 T/T 預付 · 穩定合作開放月結</td></tr>
+  </table>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <h3>申請本週 A5 和牛現貨清單</h3>
+      <div class="h-en">Weekly wagyu availability sheet · By Thu 18:00 HKT</div>
+    </div>
+    <div class="cta-item"><div class="k">WhatsApp</div><div class="v lg">+852 6774 4458</div></div>
+    <div class="cta-item"><div class="k">Email</div><div class="v lg">wagyuuniws@gmail.com</div></div>
+    <div class="cta-item"><a class="btn-primary" href="mailto:wagyuuniws@gmail.com?subject=%E7%94%B3%E8%AB%8B%20A5%20%E5%92%8C%E7%89%9B%E6%B8%85%E5%96%AE">申請清單 Request Sheet</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="row">
+    <div>© 2026 UMI WA 海和 · Hong Kong</div>
+    <div>Sourced in Japan · Served in Hong Kong</div>
+    <div><a href="index.html">← Back to home</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
