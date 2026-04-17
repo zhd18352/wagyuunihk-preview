@@ -180,12 +180,25 @@ footer.footer .row {
 
 /* ========== MOBILE ========== */
 @media (max-width: 900px) {
-  .nav-inner { flex-wrap: wrap; gap: 16px; padding: 14px 20px; }
-  .menu { order: 3; flex: 1 0 100%; gap: 20px; font-size: 13px; overflow-x: auto; }
+  .nav-inner { flex-wrap: wrap; gap: 12px; padding: 14px 20px; }
+  .mark { font-size: 17px; }
+  .mark .zh { font-size: 14px; margin-left: 6px; letter-spacing: .2em; }
+  .menu {
+    order: 3; flex: 1 0 100%; gap: 10px 16px; font-size: 12px;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .menu a { white-space: nowrap; padding: 3px 0; }
+  .nav-right { gap: 10px; }
+  .btn-primary { padding: 8px 14px; font-size: 12px; }
   .page-head { padding: 120px 20px 48px; }
+  .page-head h1 { font-size: clamp(32px, 8vw, 48px); }
   .sec { padding: 64px 20px; }
   .sec-title { flex-direction: column; align-items: flex-start; gap: 8px; }
   .gallery { grid-template-columns: 1fr; }
   .cta-strip { padding: 56px 20px; }
   .cta-strip-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 480px) {
+  .menu { font-size: 11px; gap: 8px 12px; }
+  .mark { font-size: 15px; }
 }
