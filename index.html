@@ -3,209 +3,519 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>海和 Haiku · 三個方向對比板 Design Shotgun</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+<title>海和 Haiku — 日本產地直送・香港高端餐飲批發</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
-  body { margin: 0; font-family: "Inter", "PingFang TC", sans-serif; background: #0f0f10; color: #eaeaea; }
+  :root {
+    --ink: #1a1a1a;
+    --ink-70: #3d3d3d;
+    --ink-60: #555;
+    --ink-50: #757575;
+    --ink-30: #b8b8b8;
+    --line: #e5e5e5;
+    --line-strong: #111;
+    --paper: #ffffff;
+    --cream: #faf7f2;
+    --gray: #f5f5f5;
+    --navy: #1b2a4e;
+    --navy-hover: #0f1c38;
+    --serif-zh: "Noto Serif TC", serif;
+    --serif-en: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans); color: var(--ink); background: var(--paper);
+    -webkit-font-smoothing: antialiased; line-height: 1.6;
+  }
   a { color: inherit; text-decoration: none; }
-  header {
-    padding: 48px 40px 32px; border-bottom: 1px solid #2a2a2c;
+  img { display: block; max-width: 100%; }
+
+  /* ========== NAV (from C, refined) ========== */
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 20;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--line);
   }
-  h1 {
-    font-family: "Noto Serif TC", serif; font-weight: 400; font-size: 28px; letter-spacing: .12em; margin: 0 0 8px;
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 16px 40px; display: flex; align-items: center; gap: 48px;
   }
-  header p {
-    font-family: "Cormorant Garamond", serif; font-style: italic; color: #8b8b8e; font-size: 16px; letter-spacing: .08em; margin: 0;
+  .mark { font-family: var(--serif-en); font-weight: 600; font-size: 20px; letter-spacing: .18em; }
+  .mark .zh { font-family: var(--serif-zh); margin-left: 10px; font-size: 16px; letter-spacing: .3em; }
+  .menu { display: flex; gap: 32px; flex: 1; font-size: 14px; letter-spacing: .02em; }
+  .menu a { padding: 6px 0; color: var(--ink-70); }
+  .menu a:hover, .menu a.active { color: var(--ink); font-weight: 500; }
+  .nav-right { display: flex; align-items: center; gap: 16px; font-size: 13px; }
+  .lang { color: var(--ink-50); letter-spacing: .1em; }
+  .lang .on { color: var(--ink); font-weight: 500; }
+  .btn-primary {
+    background: var(--navy); color: #fff; padding: 10px 20px; font-size: 13px;
+    letter-spacing: .06em; font-weight: 500; transition: background .15s;
   }
-  .grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 32px 40px 48px;
+  .btn-primary:hover { background: var(--navy-hover); }
+
+  /* ========== HERO (from A, full-bleed cinematic) ========== */
+  .hero {
+    position: relative; width: 100%; height: 100vh; min-height: 720px; max-height: 920px;
+    background: #111 center/cover no-repeat;
+    background-image:
+      linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.55)),
+      url("https://images.unsplash.com/photo-1558030006-450675393462?w=2400&q=85&auto=format&fit=crop");
   }
-  .hero-d {
-    background: linear-gradient(135deg, #1b2a4e 0%, #0f1c38 100%);
-    padding: 48px 40px; margin: 0 40px 24px;
-    border-radius: 6px; color: #fff;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  .hero-copy {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; color: #fff; text-align: center; padding: 0 24px;
   }
-  .hero-d h2 {
-    font-family: "Noto Serif TC", serif; font-weight: 400; font-size: 36px;
-    letter-spacing: .1em; line-height: 1.3; margin: 0 0 16px;
+  .eyebrow {
+    font-family: var(--serif-en); font-style: italic; font-size: 16px; letter-spacing: .3em;
+    text-transform: uppercase; opacity: .88; margin-bottom: 28px;
   }
-  .hero-d .tag {
-    display: inline-block; background: #fff; color: #1b2a4e; padding: 6px 14px;
-    font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 14px;
-    letter-spacing: .2em; border-radius: 2px; margin-bottom: 20px;
+  .hero h1 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(40px, 5.6vw, 76px); letter-spacing: .12em; line-height: 1.3; margin: 0 0 18px;
   }
-  .hero-d p { color: #c8d1e2; line-height: 1.8; font-size: 15px; margin-bottom: 20px; }
-  .hero-d .pages {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
+  .hero-sub {
+    font-family: var(--serif-en); font-size: clamp(18px, 1.6vw, 24px); font-style: italic; opacity: .9;
+    letter-spacing: .08em; margin-bottom: 56px;
   }
-  .hero-d .pages a {
-    font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 14px;
-    color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 8px 14px; border-radius: 3px;
-    transition: all .15s;
-  }
-  .hero-d .pages a:hover { background: #fff; color: #1b2a4e; }
-  .hero-d iframe { border: none; border-radius: 4px; height: 420px; width: 100%; background: #fff; }
-  .card.recommended::before {
-    content: "★ 你選定的方向"; position: absolute; top: -10px; left: 18px;
-    background: #1b2a4e; color: #fff; padding: 4px 12px; font-size: 11px;
-    font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: .2em;
-    border-radius: 2px;
-  }
-  .card { position: relative; }
-  .card {
-    background: #17171a; border: 1px solid #2a2a2c; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;
+  .hero-cta {
+    font-family: var(--serif-en); font-size: 17px; letter-spacing: .2em; font-style: italic;
+    padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.6);
     transition: border-color .2s;
   }
-  .card:hover { border-color: #555; }
-  .card-head {
-    padding: 20px 22px; border-bottom: 1px solid #2a2a2c;
+  .hero-cta:hover { border-bottom-color: #fff; }
+  .scroll-hint {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    font-family: var(--serif-en); font-size: 11px; letter-spacing: .4em; color: #fff; opacity: .7;
   }
-  .card-num {
-    font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 13px; letter-spacing: .3em;
-    color: #7d7d80; text-transform: uppercase; margin-bottom: 8px;
+
+  /* ========== UTILITY STRIP (from C) ========== */
+  .utility {
+    border-bottom: 1px solid var(--line); background: var(--cream);
+    font-size: 12px; color: var(--ink-70); letter-spacing: .08em;
+  }
+  .utility-inner {
+    max-width: 1440px; margin: 0 auto; padding: 12px 40px;
+    display: flex; justify-content: space-between;
+  }
+  .utility b { font-weight: 500; color: var(--ink); }
+
+  /* ========== PRODUCT GRID (from C, polished) ========== */
+  main { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+  .fold-head {
+    display: flex; justify-content: space-between; align-items: end;
+    padding: 88px 0 32px; border-bottom: 1px solid var(--line-strong);
+  }
+  .fold-head .lbl {
+    font-family: var(--serif-en); font-style: italic; font-size: 13px; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--ink-50); margin-bottom: 16px;
+  }
+  .fold-head h2 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(28px, 2.8vw, 40px); letter-spacing: .06em; margin: 0; line-height: 1.3;
+  }
+  .fold-head .h-en {
+    font-family: var(--serif-en); font-style: italic; font-size: 15px; color: var(--ink-50);
+    letter-spacing: .12em; max-width: 420px; text-align: right; line-height: 1.5;
+  }
+
+  .product-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    padding: 40px 0 96px;
+  }
+  .card {
+    display: flex; flex-direction: column; background: #fff;
+    transition: transform .3s ease;
+  }
+  .card:hover { transform: translateY(-6px); }
+  .card-img {
+    aspect-ratio: 4/5; background: var(--gray) center/cover no-repeat;
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .card-img.wagyu { background-image: url("img/wagyu.jpg"); }
+  .card-img.uni { background-image: url("img/uni.jpg"); }
+  .card-img.sea { background-image: url("img/seafood.jpg"); }
+  .card-cat {
+    font-family: var(--serif-en); font-style: italic; font-size: 13px; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--ink-50); margin-bottom: 10px;
   }
   .card-name {
-    font-family: "Noto Serif TC", serif; font-size: 20px; letter-spacing: .08em; margin-bottom: 6px;
+    font-family: var(--serif-zh); font-size: 24px; font-weight: 400; letter-spacing: .08em;
+    margin-bottom: 6px;
   }
-  .card-tag {
-    font-family: "Cormorant Garamond", serif; font-style: italic; color: #b8b8bc; font-size: 16px;
-  }
-  iframe {
-    width: 100%; height: 600px; border: none; background: #fff;
-    transform-origin: top left;
+  .card-en {
+    font-family: var(--serif-en); font-style: italic; font-size: 17px; color: var(--ink-50); margin-bottom: 16px;
   }
   .card-desc {
-    padding: 20px 22px; border-top: 1px solid #2a2a2c; font-size: 14px; color: #b8b8bc; line-height: 1.7;
+    font-size: 14px; color: var(--ink-70); line-height: 1.8; margin-bottom: 20px;
   }
-  .card-desc ul { margin: 8px 0 0; padding-left: 18px; }
-  .card-desc li { margin-bottom: 4px; }
-  .card-actions {
-    padding: 16px 22px; border-top: 1px solid #2a2a2c; display: flex; gap: 12px;
+  .card-meta {
+    display: flex; gap: 18px; font-size: 12px; color: var(--ink-50);
+    padding-top: 18px; border-top: 1px solid var(--line); margin-bottom: 18px;
+    letter-spacing: .06em;
   }
-  .btn {
-    font-size: 13px; padding: 8px 14px; border: 1px solid #3a3a3e; border-radius: 4px; color: #eaeaea;
+  .card-meta .k b { color: var(--ink); font-weight: 500; margin-left: 5px; }
+  .card-link {
+    font-family: var(--serif-en); font-style: italic; font-size: 16px; color: var(--navy);
+    padding-bottom: 3px; border-bottom: 1px solid var(--navy); align-self: flex-start;
   }
-  .btn:hover { background: #23232a; border-color: #555; }
-  .btn-primary { background: #e8e8eb; color: #17171a; border-color: #e8e8eb; font-weight: 500; }
-  .btn-primary:hover { background: #fff; }
+
+  /* ========== CREDENTIALS BAND (merged A stats + C layout) ========== */
+  .creds {
+    background: var(--cream); padding: 72px 40px;
+  }
+  .creds-inner {
+    max-width: 1440px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  }
+  .cred {
+    text-align: center; padding: 24px;
+    border-right: 1px solid #e4e0d5;
+  }
+  .cred:last-child { border-right: none; }
+  .cred-num {
+    font-family: var(--serif-en); font-weight: 500; font-size: 58px; line-height: 1;
+    margin-bottom: 14px; color: var(--ink);
+    font-variant-numeric: tabular-nums; letter-spacing: 0;
+    display: flex; align-items: baseline; justify-content: center; gap: 6px;
+  }
+  .cred-num .unit {
+    font-family: var(--serif-zh); font-size: 20px; font-weight: 400;
+    color: var(--ink-60); letter-spacing: .1em;
+  }
+  .cred-num .plus {
+    font-family: var(--serif-en); font-size: 36px; font-weight: 400;
+    color: var(--ink-60); line-height: 1; margin-left: -2px;
+  }
+  .cred-label {
+    font-family: var(--serif-zh); font-size: 13px; color: var(--ink-70); letter-spacing: .12em;
+    line-height: 1.5;
+  }
+  .cred-sub {
+    font-family: var(--serif-en); font-style: italic; font-size: 11px; color: var(--ink-50);
+    letter-spacing: .25em; text-transform: uppercase; margin-top: 8px;
+  }
+
+  /* ========== TRACEABILITY (from A — editorial image+list) ========== */
+  .trust {
+    padding: 120px 40px;
+  }
+  .trust-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .trust-img {
+    aspect-ratio: 4/5;
+    background: #ddd center/cover no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&q=85&auto=format&fit=crop");
+  }
+  .trust-copy .lbl {
+    font-family: var(--serif-en); font-style: italic; font-size: 13px; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--ink-50); margin-bottom: 20px;
+  }
+  .trust-copy h3 {
+    font-family: var(--serif-zh); font-weight: 400;
+    font-size: clamp(30px, 3vw, 44px); letter-spacing: .08em; line-height: 1.5; margin: 0 0 28px;
+  }
+  .trust-copy p {
+    font-family: var(--serif-zh); font-size: 16px; line-height: 2; color: var(--ink-60); margin: 0 0 18px;
+  }
+  .trust-list {
+    margin: 40px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line);
+  }
+  .trust-list li {
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; font-family: var(--serif-zh); font-size: 15px;
+  }
+  .trust-list .k { color: var(--ink); letter-spacing: .1em; }
+  .trust-list .v { color: var(--ink-60); font-family: var(--serif-en); font-style: italic; }
+
+  /* ========== SERVICES (from C) ========== */
+  .services-wrap { background: var(--gray); }
+  .services {
+    max-width: 1440px; margin: 0 auto; padding: 80px 40px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .svc {
+    padding: 0 40px;
+    border-right: 1px solid #dcdcdc;
+  }
+  .svc:first-child { padding-left: 0; }
+  .svc:last-child { border-right: none; padding-right: 0; }
+  .svc-no {
+    font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--ink-50);
+    letter-spacing: .3em; margin-bottom: 14px;
+  }
+  .svc-h {
+    font-family: var(--serif-zh); font-size: 22px; font-weight: 400;
+    letter-spacing: .08em; margin-bottom: 14px; line-height: 1.5;
+  }
+  .svc-desc { font-size: 14px; color: var(--ink-70); line-height: 1.8; }
+
+  /* ========== CONTACT (from C, dark CTA strip) ========== */
+  .contact {
+    background: var(--ink); color: #fff; padding: 88px 40px;
+  }
+  .contact-inner {
+    max-width: 1440px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 48px; align-items: center;
+  }
+  .contact h3 {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 28px; letter-spacing: .08em;
+    line-height: 1.5; margin: 0;
+  }
+  .contact .h-en {
+    font-family: var(--serif-en); font-style: italic; font-size: 15px; color: var(--ink-30); margin-top: 10px;
+  }
+  .contact-item .k {
+    font-family: var(--serif-zh); font-weight: 400; font-size: 13px; letter-spacing: .2em;
+    color: var(--ink-30); margin-bottom: 10px;
+  }
+  .contact-item .v.lg {
+    font-family: var(--serif-en); font-weight: 500; font-size: 22px;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    letter-spacing: .02em; white-space: nowrap;
+  }
+  .contact .btn-primary {
+    background: #fff; color: var(--ink); padding: 14px 24px; font-weight: 500;
+  }
+  .contact .btn-primary:hover { background: #e8e8eb; }
+
+  /* ========== FOOTER ========== */
   footer {
-    padding: 32px 40px 56px; border-top: 1px solid #2a2a2c; color: #7d7d80; font-size: 13px;
+    background: var(--ink); color: var(--ink-30); padding: 32px 40px;
+    font-size: 12px; font-family: var(--serif-en); font-style: italic; letter-spacing: .15em;
+    border-top: 1px solid #2a2a2a;
   }
-  footer code { background: #23232a; padding: 2px 8px; border-radius: 3px; color: #e8e8eb; font-size: 12px; }
-  .criteria {
-    padding: 24px 40px; background: #17171a; border-bottom: 1px solid #2a2a2c;
+  footer .row {
+    max-width: 1440px; margin: 0 auto;
+    display: flex; justify-content: space-between; text-transform: uppercase;
   }
-  .criteria h3 { font-family: "Noto Serif TC", serif; font-weight: 400; font-size: 15px; letter-spacing: .1em; margin: 0 0 12px; color: #eaeaea; }
-  .criteria-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .criteria-item { font-size: 13px; color: #b8b8bc; line-height: 1.6; }
-  .criteria-item b { color: #eaeaea; display: block; margin-bottom: 4px; }
+
+  .badge {
+    position: fixed; bottom: 20px; left: 20px; z-index: 100;
+    background: var(--navy); color: #fff; font-family: var(--serif-en); font-style: italic;
+    font-size: 12px; letter-spacing: .2em; padding: 10px 16px; border-radius: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-inner { flex-wrap: wrap; gap: 12px; padding: 14px 20px; }
+    .mark { font-size: 17px; }
+    .mark .zh { font-size: 14px; margin-left: 6px; letter-spacing: .2em; }
+    .menu {
+      order: 3; flex: 1 0 100%; gap: 10px 16px; font-size: 12px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .menu a { white-space: nowrap; padding: 3px 0; }
+    .nav-right { gap: 10px; }
+    .btn-primary { padding: 8px 14px; font-size: 12px; }
+    .utility-inner { flex-direction: column; gap: 6px; padding: 10px 20px; font-size: 11px; }
+    .hero h1 { font-size: clamp(34px, 9vw, 48px); letter-spacing: .08em; }
+    .hero-sub { font-size: 15px; margin-bottom: 40px; }
+    .hero-cta { font-size: 15px; }
+    main { padding: 0 20px; }
+    .fold-head { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 56px; }
+    .fold-head .h-en { text-align: left; font-size: 13px; }
+    .product-grid { grid-template-columns: 1fr; gap: 40px; padding: 32px 0 56px; }
+    .creds, .trust, .services, .contact { padding: 56px 20px; }
+    .creds-inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .cred { border-right: none; border-bottom: 1px solid #e4e0d5; padding: 18px 12px; }
+    .cred-num { font-size: 42px; }
+    .cred-num .unit { font-size: 16px; }
+    .cred-num .plus { font-size: 28px; }
+    .cred:nth-child(odd) { border-right: 1px solid #e4e0d5; }
+    .cred:nth-last-child(-n+2) { border-bottom: none; }
+    .trust-inner { grid-template-columns: 1fr; gap: 40px; }
+    .services { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+    .svc { padding: 0; border-right: none; border-bottom: 1px solid #dcdcdc; padding-bottom: 32px; }
+    .svc:last-child { border-bottom: none; }
+    .contact-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .contact h3 { font-size: 24px; }
+    footer .row { flex-direction: column; gap: 8px; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .menu { font-size: 11px; gap: 8px 12px; }
+    .mark { font-size: 15px; }
+    .hero h1 { font-size: 34px; }
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>海和 Haiku · 首頁設計三個方向</h1>
-  <p>Design Shotgun — Pick the direction that feels right. Each option opens in its own full-screen preview.</p>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="mark">Haiku<span class="zh">海和</span></div>
+    <div class="menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="wagyu.html">A5 Wagyu</a>
+      <a href="uni.html">Uni</a>
+      <a href="seafood.html">Seafood</a>
+      <a href="#traceability">Sourcing</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><span class="on">中</span> / EN</div>
+      <a class="btn-primary" href="#contact">申請報價</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero: A-style cinematic -->
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Since the Mountains of Tajima</div>
+    <h1>源頭直採　日本產地</h1>
+    <div class="hero-sub">Japan to Hong Kong, direct — for the ones who know.</div>
+    <a class="hero-cta" href="#products">探索產品 · Explore →</a>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
 </header>
 
-<section class="criteria">
-  <h3>選擇標準</h3>
-  <div class="criteria-grid">
-    <div class="criteria-item"><b>1. 第一眼信任感</b>日料店老板能否在 3 秒內判斷 "這是專業供應商"</div>
-    <div class="criteria-item"><b>2. 信息密度</b>B2B 買家需要的規格、MOQ、溯源是否觸手可及</div>
-    <div class="criteria-item"><b>3. 品牌氣質</b>和日料文化是否契合，是否區別於普通食材站</div>
-    <div class="criteria-item"><b>4. Wix 遷移難度</b>當前方向能否在 Wix Editor / Studio 內實現</div>
+<!-- Utility: live stock strip (C-style info density) -->
+<div class="utility">
+  <div class="utility-inner">
+    <div><b>飛機貨供應期</b>：星期一、二、四、五、六</div>
+    <div>星期三／日豐洲市場休息，無鮮貨到港，冷凍貨品可照常派送</div>
+  </div>
+</div>
+
+<!-- Products: C-style grid, elevated -->
+<main id="products">
+  <div class="fold-head">
+    <div>
+      <div class="lbl">Our Core Catalogue</div>
+      <h2>三大核心品類・日本產地直送</h2>
+    </div>
+    <div class="h-en">Since 2014 — supplying 50+ Japanese restaurants across Hong Kong with weekly direct-sourced wagyu, uni and seafood.</div>
+  </div>
+
+  <section class="product-grid">
+    <article class="card">
+      <div class="card-img wagyu"></div>
+      <div class="card-cat">01 — Wagyu</div>
+      <div class="card-name">A5 黑毛和牛</div>
+      <div class="card-en">Satsuma · Miyazaki · Kagoshima</div>
+      <div class="card-desc">BMS 8–12 等級，整頭進口分切，涵蓋 24 個主要部位。按餐廳菜單結構定制切割。</div>
+      <a class="card-link" href="wagyu.html">View specs &amp; pricing →</a>
+    </article>
+    <article class="card">
+      <div class="card-img uni"></div>
+      <div class="card-cat">02 — Uni</div>
+      <div class="card-name">海膽</div>
+      <div class="card-en">Bafun · Murasaki</div>
+      <div class="card-desc">豐州直送・大連直送，不同級數及規格的海膽符合各餐廳的需要。</div>
+      <a class="card-link" href="uni.html">View grades &amp; season →</a>
+    </article>
+    <article class="card">
+      <div class="card-img sea"></div>
+      <div class="card-cat">03 — Seafood</div>
+      <div class="card-name">刺身魚系列</div>
+      <div class="card-en">Bluefin · Kinmedai · Tai · More</div>
+      <div class="card-desc">本鮪腹／金目鯛／鮟鱇／真鯛／青甘。ULT -60°C 與當日活〆兩種供應模式。</div>
+      <a class="card-link" href="seafood.html">View full catalogue →</a>
+    </article>
+  </section>
+</main>
+
+<!-- Credentials band on cream (warmer than pure white C) -->
+<section class="creds">
+  <div class="creds-inner">
+    <div class="cred">
+      <div class="cred-num">5<span class="plus">+</span><span class="unit">年</span></div>
+      <div class="cred-label">產地採購經驗</div>
+      <div class="cred-sub">Since 2014</div>
+    </div>
+    <div class="cred">
+      <div class="cred-num">5<span class="unit">班／週</span></div>
+      <div class="cred-label">日本空運到港</div>
+      <div class="cred-sub">Direct Air Freight</div>
+    </div>
+    <div class="cred">
+      <div class="cred-num">50<span class="plus">+</span><span class="unit">家</span></div>
+      <div class="cred-label">合作日料餐廳</div>
+      <div class="cred-sub">HK Partners</div>
+    </div>
+    <div class="cred">
+      <div class="cred-num">DNA</div>
+      <div class="cred-label">全程血統溯源認證</div>
+      <div class="cred-sub">Verified Traceability</div>
+    </div>
   </div>
 </section>
 
-<section class="hero-d">
-  <div>
-    <div class="tag">YOUR CHOICE · 最終版</div>
-    <h2>變體 D · A hero + C 產品卡</h2>
-    <p>混搭 A 的震撼 hero + C 的 B2B 效率，補齊 4 個產品 / 關於 / 溯源子頁面。導航可點、牧場圖已修、電話字體正常、資質條重排。</p>
-    <div class="pages">
-      <a href="variant-d/index.html" target="_blank">首頁 Home ↗</a>
-      <a href="variant-d/wagyu.html" target="_blank">A5 和牛 Wagyu ↗</a>
-      <a href="variant-d/uni.html" target="_blank">北海道海膽 Uni ↗</a>
-      <a href="variant-d/seafood.html" target="_blank">日式海味 Seafood ↗</a>
-      <a href="variant-d/about.html" target="_blank">關於 About ↗</a>
+<!-- Traceability (A-style editorial) -->
+<section class="trust" id="traceability">
+  <div class="trust-inner">
+    <div class="trust-img"></div>
+    <div class="trust-copy">
+      <div class="lbl">Traceability</div>
+      <h3>從牧場・漁港到<br>您的廚房，全鏈透明</h3>
+      <p>每一批貨附帶日本原產認證、DNA 檢測報告、冷鏈溫度曲線與海關清關憑證。主廚可憑 Batch No. 在我們系統即時追溯。</p>
+      <p>海和的採購團隊常駐九州與北海道。每週五班空運直抵香港，主廚今天下單，明天上桌。</p>
+      <ul class="trust-list">
+        <li><span class="k">日本原產地證明</span><span class="v">every shipment</span></li>
+        <li><span class="k">DNA 血統溯源</span><span class="v">A5 wagyu only</span></li>
+        <li><span class="k">冷鏈溫度紀錄</span><span class="v">-60°C to 4°C</span></li>
+        <li><span class="k">香港食環署報關</span><span class="v">verified</span></li>
+      </ul>
     </div>
   </div>
-  <iframe src="variant-d/index.html" title="Variant D preview"></iframe>
 </section>
 
-<section class="grid">
+<!-- Services -->
+<div class="services-wrap">
+  <section class="services">
+    <div class="svc">
+      <div class="svc-no">01 / Sourcing</div>
+      <div class="svc-h">日本產地採購</div>
+      <div class="svc-desc">九州・北海道常駐採購團隊，牧場競拍與漁港直採。每週核心品項穩定供應，特殊部位按單預訂。</div>
+    </div>
+    <div class="svc">
+      <div class="svc-no">02 / Logistics</div>
+      <div class="svc-h">冷鏈空運</div>
+      <div class="svc-desc">每週三班日本至香港空運（一、三、五抵港），-60°C 冷凍與 4°C 冷藏雙溫控鏈，全程溫度曲線可查詢。</div>
+    </div>
+    <div class="svc">
+      <div class="svc-no">03 / Partnership</div>
+      <div class="svc-h">專屬合作方案</div>
+      <div class="svc-desc">按餐廳菜單結構定制週訂貨清單，源頭直採，價錢具有競爭力。</div>
+    </div>
+  </section>
+</div>
 
-  <div class="card">
-    <div class="card-head">
-      <div class="card-num">A — Poseidon Hero（參考）</div>
-      <div class="card-name">全幅大圖英雄</div>
-      <div class="card-tag">Cinematic · Editorial-Luxury</div>
+<!-- Contact dark CTA -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h3>WhatsApp<br>立即查詢報價</h3>
+      <div class="h-en">Chat with us now · Live price sheet on WhatsApp</div>
     </div>
-    <iframe src="variant-a/index.html" title="Variant A"></iframe>
-    <div class="card-desc">
-      <strong style="color:#eaeaea">結構：</strong>全屏 hero 大圖 → 品牌介紹 + 4 統計 → 3 產品網格 → 溯源區塊 → 聯絡。
-      <ul>
-        <li>氣質：Michelin Guide / psdgp.com 式</li>
-        <li>強在：第一眼震撼，高端餐飲文化契合度最高</li>
-        <li>弱在：信息密度較低，買家要滾一屏才看到產品</li>
-      </ul>
+    <div class="contact-item">
+      <div class="k">WhatsApp</div>
+      <div class="v lg">+852 6774 4457</div>
     </div>
-    <div class="card-actions">
-      <a class="btn btn-primary" href="variant-a/index.html" target="_blank">Open ↗</a>
-      <a class="btn" href="variant-a/index.html">Preview inline</a>
+    <div class="contact-item">
+      <div class="k">Email</div>
+      <div class="v lg">wagyuuniws@gmail.com</div>
+    </div>
+    <div class="contact-item">
+      <a class="btn-primary" href="https://wa.me/85267744457" target="_blank" rel="noopener">申請報價 WhatsApp</a>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="card-num">B — Editorial Spread（參考）</div>
-      <div class="card-name">編輯刊物式</div>
-      <div class="card-tag">Kinfolk · Magazine</div>
-    </div>
-    <iframe src="variant-b/index.html" title="Variant B"></iframe>
-    <div class="card-desc">
-      <strong style="color:#eaeaea">結構：</strong>Hero 左圖右文 + Issue 刊號 → 01 Wagyu / 02 Uni / 03 Seafood 雜誌專題頁 → 引文 + 規格表 → 聯絡。
-      <ul>
-        <li>氣質：Kinfolk 雜誌 + 米芝蓮指南內頁</li>
-        <li>強在：長文可承載品牌故事與規格，最適合講"匠人"敘事</li>
-        <li>弱在：頁面長，買家想直接看產品會不耐煩</li>
-      </ul>
-    </div>
-    <div class="card-actions">
-      <a class="btn btn-primary" href="variant-b/index.html" target="_blank">Open ↗</a>
-      <a class="btn" href="variant-b/index.html">Preview inline</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div class="card-num">C — Grid Catalogue（參考）</div>
-      <div class="card-name">3 欄產品網格</div>
-      <div class="card-tag">B2B · Efficient</div>
-    </div>
-    <iframe src="variant-c/index.html" title="Variant C"></iframe>
-    <div class="card-desc">
-      <strong style="color:#eaeaea">結構：</strong>頂部"本週到貨"動態條 → 首屏直接 3 產品卡（含 MOQ / Grade / Lead）→ 資質條 → 合作餐廳 → 3 服務 → 黑色 CTA 條。
-      <ul>
-        <li>氣質：高端 B2B / The Outnet 式效率優先</li>
-        <li>強在：首屏信息最密，買家下單轉化最快</li>
-        <li>弱在：相對"冷"，品牌情感弱於 A/B</li>
-      </ul>
-    </div>
-    <div class="card-actions">
-      <a class="btn btn-primary" href="variant-c/index.html" target="_blank">Open ↗</a>
-      <a class="btn" href="variant-c/index.html">Preview inline</a>
-    </div>
-  </div>
-
 </section>
 
 <footer>
-  三個方向都基於同一套設計系統 · <code>Noto Serif TC + Cormorant Garamond + Inter</code> · <code>#FFF / #1A1A1A / #1B2A4E</code><br><br>
-  你已經選定方向 D（A+C 混搭）· 下一步：再微調或走 <code>document-skills:frontend-design</code> 做生產級精修 + <code>Wix 遷移書</code>。
+  <div class="row">
+    <div>© 2026 Haiku 海和 · Hong Kong</div>
+    <div>Sourced in Japan · Served in Hong Kong</div>
+    <div><a href="mailto:wagyuuniws@gmail.com">wagyuuniws@gmail.com</a></div>
+  </div>
 </footer>
 
 </body>
